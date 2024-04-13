@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { test, describe, expect, beforeEach } = require('@playwright/test')
 
 describe('Test one pokemon', () => {
@@ -15,5 +16,6 @@ describe('Test one pokemon', () => {
     await expect(page.getByText('butterfree')).toBeVisible()
     await expect(page.getByText('speed')).toBeVisible()
     await expect(page.getByText('tinted lens')).toBeVisible()
+    console.log('Butterfree can be navigated to')
   })
 })
