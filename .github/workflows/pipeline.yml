@@ -17,6 +17,9 @@ jobs:
         run: npm install
       - name: Showing pwd
         run: pwd
-      - name: Check style
+      - name: Lint
         run: npm run eslint
-        
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test
