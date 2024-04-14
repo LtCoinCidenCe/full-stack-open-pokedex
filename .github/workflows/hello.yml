@@ -41,3 +41,4 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         env:
           LAST_COMMIT: ${{ github.pull_request.head.sha }}
+        run: echo "$LAST_COMMIT"
