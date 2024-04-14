@@ -37,3 +37,7 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
+      - name: get commit
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          LAST_COMMIT: ${{ github.pull_request.head.sha }}
