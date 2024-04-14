@@ -42,3 +42,6 @@ jobs:
         env:
           LAST_COMMIT: ${{ github.pull_request.head.sha }}
         run: echo "$LAST_COMMIT"
+      - name: check functions
+        if: ${{ contains(join(github.event.commits.*.message),'#skip') }}
+        run: echo "check passed for contains and join"
