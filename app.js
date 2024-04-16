@@ -16,7 +16,14 @@ app.get('/version', (req, res) => {
 })
 
 app.get('/health', (req, res) => {
-  // eslint-disable-next-line no-constant-condition
-  if(true)throw('makeitfail')
   res.send('ok')
+})
+
+app.get('/earthCheck', (req, res) => {
+  if (new Date().getHours() > 14) {
+    res.status(400).send('wrong time')
+  }
+  else {
+    res.send('ok')
+  }
 })

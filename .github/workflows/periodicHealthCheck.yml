@@ -1,0 +1,20 @@
+name: Periodic Health Check
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 18 * * *'
+
+jobs:
+  health_check_on_earth:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the earth URL
+      uses: jtalk/url-health-check-action@v4
+      with:
+        url: https://full-stack-open-cccpokedex.fly.dev/earthCheck
+        follow-redirect: false
+        max-attempts: 3
+        retry-delay: 5s
+        retry-all: false
