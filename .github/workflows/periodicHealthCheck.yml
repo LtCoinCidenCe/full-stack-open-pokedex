@@ -2,7 +2,7 @@ name: Periodic Health Check
 
 on:
   schedule:
-    - cron: '0 8,13,15,17.19 * * *'
+    - cron: '0 8,13,15,17,19 * * *'
 
 jobs:
   health_check_on_earth:
