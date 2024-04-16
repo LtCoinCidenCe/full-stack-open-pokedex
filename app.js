@@ -20,7 +20,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/earthCheck', (req, res) => {
-  if (new Date().getUTCHours > 8) {
+  if (new Date().getUTCHours() > 8) {
     res.status(400).send('wrong time')
   }
   else {
