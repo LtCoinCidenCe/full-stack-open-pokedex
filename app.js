@@ -20,7 +20,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/earthCheck', (req, res) => {
-  if (new Date().getHours() > 14) {
+  if (new Date().getHours() > 16) {
     res.status(400).send('wrong time')
   }
   else {
